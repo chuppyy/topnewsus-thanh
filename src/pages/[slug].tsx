@@ -79,9 +79,10 @@ export default function Page(data: any) {
 
       <main>
         <div className="container-flu details">
-          <div className="adsconex-banner" data-ad-placement="banner1" id="ub-banner1"></div>
+          <div id="div_adsconex_banner_responsive_1"></div>
           <h1>{article.name}</h1>
-          {/* Banner FEJI */}
+          <div id="adsconex-video-container"></div>
+          {/* Banner FEJI
       <script
         dangerouslySetInnerHTML={{
           __html: `
@@ -92,7 +93,7 @@ export default function Page(data: any) {
       />
       
       {/* Video Player FEJI */}
-      <div id="div-ub-feji.io_1723454353847">
+      {/* <div id="div-ub-feji.io_1723454353847">
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -101,7 +102,7 @@ export default function Page(data: any) {
             `
           }}
         />
-      </div>
+      </div> */} 
           <p className="mb-4 text-lg">Posted: {formatDate(article.dateTimeStart)}</p>
 
           <Suspense fallback={<p>Loading ...</p>}>
@@ -210,7 +211,7 @@ export async function getStaticProps({ params }: { params: any }) {
       adsKeeperSrc: "https://jsc.mgid.com/site/1066309.js",
       googleTagId: "G-RZ218Z0QZ1",
       // <-- set isMgid = 1 để dùng MGID, = 0 để dùng Taboola
-      isMgid: 1,
+      isMgid: 0,
     };
 
     return {

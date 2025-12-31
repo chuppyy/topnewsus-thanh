@@ -9,13 +9,13 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
-<script async src="https://cdn.unibotscdn.com/player/mvp/player.js"></script>
-<script async src="https://cdn.unibots.in/headerbidding/common/hb.js"></script>     
-        
+      <script defer src="https://cdn.adsconex.com/js/adsconex-player.js"></script>   
+      <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+      <script defer src="https://cdn.adsconex.com/js/adsconex-banner-bw-feji-rl.js"></script>
         {/* --- HẾT Mã FEJI (HEAD) --- */}
       </Head>
 {/* 🔥 TABOOLA SCRIPT — đặt ngoài HEAD */}
-{/* <Script id="taboola-script" strategy="afterInteractive">
+<Script id="taboola-script" strategy="afterInteractive">
   {`
     window._taboola = window._taboola || [];
     _taboola.push({article:'auto'});
@@ -29,7 +29,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     }(
       document.createElement('script'),
       document.getElementsByTagName('script')[0],
-      '//cdn.taboola.com/libtrc/metaconex-localfejiio/loader.js',
+      '//cdn.taboola.com/libtrc/metaconex-topnewsusfejiio/loader.js',
       'tb_loader_script'
     );
 
@@ -37,7 +37,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       window.performance.mark('tbl_ic');
     }
   `}
-</Script> */}
+</Script>
 
 
 
@@ -47,20 +47,20 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
 {/* --- Mã FEJI (HEAD) --- */}
         {/* VIDEO PLAYER FEJI: Mã Player Script chính */}
-        <Script id="feji-video-player-script" strategy="beforeInteractive">
+        {/* <Script id="feji-video-player-script" strategy="beforeInteractive">
           {`
             (function(){let a="ZG9jdW1lbnQ=",b="Y3JlYXRlRWxlbWVudA==",c="c2NyaXB0",d="YXN5bmM=",e="c3Jj",f="YXBwZW5kQ2hpbGQ=",g="aHR0cHM6Ly9jZG4udW5pYm90c2Nkbi5jb20vcGxheWVyL212cC9wbGF5ZXIuanM=",s=window[atob(a)][atob(b)](atob(c));s[atob(d)]=!0,s[atob(e)]=atob(g),window[atob(a)].head[atob(f)](s);})();
           `}
-        </Script>
+        </Script> */}
         {/* VIDEO PLAYER FEJI: Mã Style ẩn logo */}
-        <Script id="feji-video-player-style" strategy="beforeInteractive">
+        {/* <Script id="feji-video-player-style" strategy="beforeInteractive">
           {`
             (function(){ var b64 = "PHN0eWxlPgphI3VicF9sb2dvIHsgZGlzcGxheTogbm9uZSAhaW1wb3J0YW50OyB9Cjwvc3R5bGU+"; var html = atob(b64); document.head.insertAdjacentHTML("beforeend", html); })();
           `}
-        </Script>
+        </Script> */}
 
         {/* BANNER FEJI: Mã Header Bidding Script chính */}
-        <Script id="feji-banner-script" strategy="beforeInteractive">
+        {/* <Script id="feji-banner-script" strategy="beforeInteractive">
           {`
             (function(){
               let a="ZG9jdW1lbnQ=",b="Y3JlYXRlRWxlbWVudA==",c="c2NyaXB0",d="YXN5bmM=",
@@ -70,10 +70,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
               window[atob(a)].head.appendChild(s);
             })();
           `}
-        </Script>
+        </Script> */}
 {/* --- Mã BANNER FEJI (BODY Top) --- */}
       {/* Script khởi tạo Banner FEJI (Đặt ở đây hoặc trong Layout) */}
-      <Script id="feji-banner-init">
+      {/* <Script id="feji-banner-init">
         {`
           (function(){
             let a="d2luZG93",b="LnVuaWJvdHNoYiA9IHdpbmRvdy51bmlib3RzaGIgfHwg",
@@ -82,7 +82,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             Function(atob(a)+atob(b)+atob(c)+atob(a)+atob(d)+atob(e))();
           })();
         `}
-      </Script>
+      </Script> */}
       {/* --- HẾT Mã BANNER FEJI (BODY Top) --- */}
       <Layout>
         <Component {...pageProps} />
