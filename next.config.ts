@@ -96,8 +96,8 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Cache-Control",
-            // CDN cache 10 minutes, allow stale while revalidating
-            value: "public, s-maxage=600, stale-while-revalidate=3600",
+            // CDN cache 1 year (immutable) - articles never change
+            value: "public, s-maxage=31536000, immutable",
           },
         ],
       },

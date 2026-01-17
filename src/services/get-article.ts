@@ -2,7 +2,7 @@ import { VARIABLES } from "@/constant/variables";
 import { BACKUP_BASE_URL } from "@/constant/api-config";
 import { Article, NewsGroup } from "@/types/article";
 import { extractIdFromSlug } from "@/utils/data";
-import { fetchWithRetry, fetchWithTimeout } from "@/utils/fetch-helper";
+import { fetchWithTimeout } from "@/utils/fetch-helper";
 import { unstable_cache } from "next/cache";
 
 type ArticleResponse = {
@@ -71,7 +71,7 @@ const fetchFromBackup = async (id: string): Promise<Article | null> => {
  */
 export const fetchArticlesFromAPI = async (id: string): Promise<Article[]> => {
   try {
-    const response = await fetchWithRetry(
+    const response = await fetchWithTimeout(
       `${VARIABLES.nextPublicAppApi}/News/news-detailvip?id=${encodeURIComponent(id)}`,
       {
         cache: "force-cache", // Aggressively cache - articles are immutable
@@ -130,7 +130,7 @@ export const getArticles = async (slug: string): Promise<Article[]> => {
     },
     [`articles-${id}`],
     {
-      revalidate: 604800, // 7 days
+      revalidate: 31536000, // 1 year - articles never change
       tags: [`articles-${id}`],
     }
   );
@@ -143,7 +143,7 @@ export const getArticles = async (slug: string): Promise<Article[]> => {
     },
     [`articles-failed-${id}`],
     {
-      revalidate: 60, // 1 minute - retry soon
+      revalidate: 600, // 10 minute - retry soon
       tags: [`articles-failed-${id}`],
     }
   );
